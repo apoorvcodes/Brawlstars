@@ -10,7 +10,7 @@ import (
 
 func FetchClient(endpoint string, token string) []byte {
 	fetch := http.Client{
-		Timeout: time.Second * 2, // Timeout after 2 seconds
+		Timeout: time.Second * 200, // Timeout after 2 seconds
 	}
 	req, err := http.NewRequest(http.MethodGet, endpoint, nil)
 	if err != nil {
