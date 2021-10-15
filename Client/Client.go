@@ -1,7 +1,6 @@
-package Brawlstars;
+package Brawlstars
 
 
-import "github.com/apoorvcodes/Brawlstars/Util"
 
 type Client struct {
 	token string
@@ -13,10 +12,11 @@ func BsClient(token string, proxy bool) *Client {
 }
 
 
-func (c *Client) GetPlayer(tag string) []byte{
-	value  := Utils.BaseUrl("/player/" + tag, true)
-	data := Utils.FetchClient(value, c.token)
-	return data
+func (c *Client) GetPlayer(tag string) Player{
+	value  := BaseUrl("/player/" + tag, true)
+	data := FetchClient(value, c.token)
+	result := ParsePLayerJson(data)
+	return result
 	
 }
 

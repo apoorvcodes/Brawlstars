@@ -1,4 +1,4 @@
-package Utils
+package Brawlstars
 
 
 func BaseUrl(query string, proxy bool) string{ 

@@ -1,4 +1,4 @@
-package Utils
+package Brawlstars
 
 import (
 	"io/ioutil"
@@ -34,7 +34,7 @@ func FetchClient(endpoint string, token string) []byte {
 	body, err := ioutil.ReadAll(res.Body)
 
 	if err != nil {
-          return nil
+          return []byte(err.Error())
 	}
 	return body
 }

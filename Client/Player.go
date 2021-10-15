@@ -5,20 +5,15 @@ type Player struct {
 	Name string `json:"name"`
 	Tag string `json:"tag"`
 	ID string `json:"id"`
-	BrawlersUnlocked int `json:"brawlersUnlocked"`
-	Victories int `json:"victories"`
-	SoloShowdownVictories int `json:"soloShowdownVictories"`
-	DuoShowdownVictories int `json:"duoShowdownVictories"`
-	TotalExp int `json:"totalExp"`
-	ExpFmt string `json:"expFmt"`
-	ExpLevel int `json:"expLevel"`
+	IsQualified bool `json:"isQualifiedFromChampionshipChallenge"`
+	TrioVictories int `json:"3vs3Victories"`
 	Trophies int `json:"trophies"`
-	HighestTrophies int `json:"highestTrophies"`
-	AvatarID int `json:"avatarId"`
-	AvatarURL string `json:"avatarUrl"`
-	BestTimeAsBigBrawler string `json:"bestTimeAsBigBrawler"`
-	BestRoboRumbleTime string `json:"bestRoboRumbleTime"`
-	HasSkins bool `json:"hasSkins"`
-	Club *PartialClub `json:"club"`
+	ExpLevel int `json:"expLevel"`
+	ExpPoints int `json:"expPoints"`
+	SoloVictories int `json:"soloVictories"`
+	DuoVictories int `json:"duoVictories"`
+	BestTime int `json:"bestRoboRumbleTime"`
+	BestTimeBigBrawler int `json:"bestTimeAsBigBrawler"`
+	Club *PlayerClub `json:"club"`
 	Brawlers []Brawler `json:"brawlers"`
       }
