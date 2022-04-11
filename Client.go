@@ -18,9 +18,9 @@ func BsClient(token string, proxy bool) *Client {
 
 func (c *Client) GetPlayer(tag string) (*Player, error) {
 	data, err := goquests.Get(goquests.Request{
-		URL: fmt.Sprintf("%v/player", c.base),
+		URL: fmt.Sprintf("%v/players/%v", c.base, tag),
 		Headers: map[string]string{
-			"Authentication": fmt.Sprintf("Bearer %v", c.token),
+			"Authorization": fmt.Sprintf("Bearer %v", c.token),
 		},
 		Data: map[string]interface{}{},
 	})
@@ -28,7 +28,7 @@ func (c *Client) GetPlayer(tag string) (*Player, error) {
 		return &Player{}, err
 	}
 	var p *Player
-	fmt.Print(data.Body)
+	fmt.Print(data)
 	return p, nil
 }
 
